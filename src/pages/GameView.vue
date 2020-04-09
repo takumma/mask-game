@@ -1,7 +1,19 @@
 <template>
   <div id="game">
-    <h1>GameView</h1>
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/result">Go to Result</router-link>
+    <game-stage @newgame="newgame"/>
   </div>
 </template>
+
+
+<script>
+import GameStage from '@/components/GameStage'
+export default {
+  name: 'GameView',
+  components: { GameStage },
+  methods: {
+    newgame () {
+      this.$router.push('/game')
+    }
+  }
+}
+</script>
