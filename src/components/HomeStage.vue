@@ -1,7 +1,18 @@
 <template>
   <div>
     <h1>HomeView</h1>
-    <router-link to="/game">Go to Game</router-link>
-    <router-link to="/result">Go to Result</router-link>
+    <button @click="StartGame">Play</button>
   </div>
 </template>
+
+
+<script>
+export default {
+  name: 'HomeStage',
+  methods: {
+    StartGame() {
+      this.$router.push('/game')
+    }
+  }
+}
+</script>
