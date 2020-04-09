@@ -1,6 +1,6 @@
 <template>
   <div id="result">
-    <result-stage @newgame="newgame"/>
+    <result-stage/>
   </div>
 </template>
 
@@ -11,9 +11,6 @@ export default {
   name: 'ResultView',
   components: { ResultStage },
   methods: {
-    newgame () {
-      this.$router.push('/game')
-    }
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <home-stage @newgame="newgame"/>
+    <home-stage/>
   </div>
 </template>
 
@@ -11,9 +11,6 @@ export default {
   name: 'HomeView',
   components: { HomeStage },
   methods: {
-    newgame () {
-      this.$router.push('/game')
-    }
   }
 }
 </script>
