@@ -1,5 +1,5 @@
 <template>
-  <div id="result">
+  <div>
     <result-stage/>
   </div>
 </template>
@@ -7,6 +7,7 @@
 
 <script>
 import ResultStage from '@/components/ResultStage'
+import 'normalize.css'
 export default {
   name: 'ResultView',
   components: { ResultStage },
@@ -14,3 +15,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>
