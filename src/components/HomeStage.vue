@@ -32,10 +32,10 @@ export default {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 92%;
   background-color: whitesmoke;
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 #role{
