@@ -1,13 +1,6 @@
 <template>
   <div id="inner-home">
     <h1 id="home-title">MaskGame</h1>
-    <div id="role">
-      <p id="inner-role">このゲームではマスクをつけている子とつけていない子が出てくるよ<br>
-         マスクをつけていない子にはタップしてマスクをつけてあげよう<br>
-         でも、マスクをつけている子をタップしてしまうと、<br>マスクがなくなって3秒間押せなくなるから
-         気を付けてね。
-      </p>
-    </div>
     <button class="home-button" @click="StartGame">Play</button>
   </div>
 </template>
@@ -38,14 +31,7 @@ export default {
   border-radius: 30px;
 }
 
-#role{
-  background-color: white;
-  border-radius: 20px;
-}
 
-#inner-role{
-  display: grid;
-}
 
 #home-title{
   margin-top: 0;
@@ -53,10 +39,11 @@ export default {
 }
 
 .home-button{
-  border: limegreen 3px solid;
+  border: #3cb371 3px solid;
   border-radius: 5px;
   padding: 10px;
   margin-bottom:10%;
+  background-color: white;
 }
 
 </style>

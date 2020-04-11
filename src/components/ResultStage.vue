@@ -5,8 +5,6 @@
     <button class="result-button" @click="RetryGame">Retry</button>
     <br>
     <button class="result-button" @click="tweet()">つぶやく</button>
-    <!--これだけでつぶやけちゃう-->
-    <!--<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>-->
   </div>
 </template>
 
@@ -59,11 +57,13 @@ export default {
 }
 
 .result-button{
-  border: limegreen 3px solid;
+  border:#3cb371 3px solid;
   border-radius: 5px;
   padding: 10px;
   width: 30%;
   margin: 10px ;
+  outline: none;
+  background-color: white;
 }
 </style>
 
