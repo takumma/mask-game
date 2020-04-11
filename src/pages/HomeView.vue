@@ -1,19 +1,21 @@
 <template>
-  <div id="home">
-    <home-stage @newgame="newgame"/>
+  <div>
+    <home-stage/>
   </div>
 </template>
 
 
 <script>
 import HomeStage from '@/components/HomeStage'
+import 'normalize.css'
 export default {
   name: 'HomeView',
   components: { HomeStage },
   methods: {
-    newgame () {
-      this.$router.push('/game')
-    }
   }
 }
 </script>
+
+
+<style>
+</style>
