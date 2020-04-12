@@ -3,7 +3,6 @@
     <h1>GameView</h1>
     <router-link to="/">Go to Home</router-link>	
     <router-link to="/result">Go to Result</router-link>
-    {{ random() }} <br>
     <human v-for="people in peoples" v-bind:key="people" :top="random()" :left="random()"/>
     <timer />
   </div>
@@ -22,7 +21,7 @@ export default {
   },
   methods: {
     random() {
-      return Math.floor(Math.random() * 501) + 'px'
+      return Math.floor(Math.random() * 101) + '%'
     },
   }
 }

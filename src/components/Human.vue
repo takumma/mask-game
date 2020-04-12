@@ -1,6 +1,8 @@
 <template>
   <div id="human" :style="styles">
-    human {{top + " " + left + " " }}
+    human <br/>
+    {{ top }} <br/>
+    {{ left }}
   </div>
 </template>
 
