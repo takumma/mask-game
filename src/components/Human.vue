@@ -10,8 +10,8 @@ export default {
 	computed: {
     styles() {
       return {
-        '--top': Math.floor(Math.random() * 101) + '%',
-        '--left': Math.floor(Math.random() * 101) + '%'
+        '--top': Math.floor(Math.random() * 61) + 25 + '%',
+        '--left': Math.floor(Math.random() * 80) + 10 + '%'
       }
     }
 	}
