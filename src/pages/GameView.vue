@@ -7,6 +7,7 @@
 
 <script>
 import GameStage from '@/components/GameStage'
+import 'normalize.css'
 export default {
   name: 'GameView',
   components: { GameStage },
