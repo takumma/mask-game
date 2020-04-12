@@ -2,8 +2,9 @@
   <div id="inner-game">
     <h1>GameView</h1>
     <router-link to="/">Go to Home</router-link>	
-    <router-link to="/result">Go to Result</router-link>
-    <human v-for="people in peoples" v-bind:key="people" :top="random()" :left="random()"/>
+    <router-link to="/result">Go to Result</router-link> <br/>
+    <h2>{{ point }}</h2>
+    <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
     <timer />
   </div>
 </template>
@@ -16,13 +17,14 @@ export default {
   components: {human,timer},
   data() {
     return {
-      peoples: 5
+      peoples: 5,
+      point: 0
     }
   },
   methods: {
-    random() {
-      return Math.floor(Math.random() * 101) + '%'
-    },
+    addPoint() {
+      this.point += 1
+    }
   }
 }
 </script>
