@@ -1,7 +1,7 @@
 <template>
-  <dev id="human" :style="styles">
+  <div id="human" :style="styles">
     human {{top + " " + left + " " }}
-  </dev>
+  </div>
 </template>
 
 <script>
