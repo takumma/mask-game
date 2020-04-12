@@ -1,21 +1,17 @@
 <template>
-  <div id="human" :style="styles">
-    human {{top + " " + left + " " }}
+  <div id="human" :style="styles" @click="$emit('addPoint')">
+    human
   </div>
 </template>
 
 <script>
 export default {
   name: 'human',
-  props: {
-    top: {},
-    left: {}
-  },
 	computed: {
     styles() {
       return {
-        '--top': this.top,
-        '--left': this.left
+        '--top': Math.floor(Math.random() * 61) + 25 + '%',
+        '--left': Math.floor(Math.random() * 80) + 10 + '%'
       }
     }
 	}
