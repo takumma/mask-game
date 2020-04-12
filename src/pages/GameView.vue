@@ -1,6 +1,6 @@
 <template>
-  <div id="game">
-    <game-stage/>
+  <div>
+    <game-stage/>	
   </div>
 </template>
 
