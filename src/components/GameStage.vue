@@ -5,14 +5,16 @@
     <router-link to="/result">Go to Result</router-link>
     {{ random() }} <br>
     <human :top="random()" :left="random()"/>
+    <timer />
   </div>
 </template>
 
 <script>
 import human from './Human'
+import timer from'./Timer'
 export default {
   name: 'GameStage',
-  components: {human},
+  components: {human,timer},
   methods: {
     random() {
       return Math.floor(Math.random() * 501) + 'px'
