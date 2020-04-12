@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     checkMask(){
-      if(this.mask) {
+      if(!this.mask) {
         this.$emit('addPoint')
       }
     }
