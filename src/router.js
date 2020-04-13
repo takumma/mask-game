@@ -20,7 +20,7 @@ export default new Router({
         component: GameView
     },
     {
-        path: '/result/:point',
+        path: '/result',
         name: 'result',
         component: ResultView
     }

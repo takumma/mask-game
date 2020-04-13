@@ -5,7 +5,7 @@
     <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
     <h2>{{ point }}</h2>
     <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
-    <timer :point="this.point"/>
+    <timer :point="this.point" @finish="finish"/>
   </div>
 </template>
 
@@ -24,6 +24,10 @@ export default {
   methods: {
     addPoint() {
       this.point += 1
+    },
+    finish(point) {
+      this.$store.commit('setPoint', {point})
+      this.$router.push('/result')
     }
   }
 }
