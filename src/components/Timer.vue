@@ -4,6 +4,7 @@
         <div slot="process" slot-scope="anyYouWantedScopName" class="time">{{ ` ${anyYouWantedScopName.timeObj.ceil.s}` }}</div>
         <div slot="finish" class="time">
           <span>０</span>
+          <button @click="finish">結果を見る</button>
         </div>
       </countdown>
     </div>
@@ -13,7 +14,12 @@
 export default {
   props: {
     point: {}
-  }
+  },
+  methods: {
+    finish() {
+      this.$emit('finish',this.point)
+    }
+  }  
 }
 </script>
 
