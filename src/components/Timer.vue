@@ -4,7 +4,6 @@
         <div slot="process" slot-scope="anyYouWantedScopName" class="time">{{ ` ${anyYouWantedScopName.timeObj.ceil.s}` }}</div>
         <div slot="finish" class="time">
           <span>０</span>
-          <router-link :to="{name: 'result', params: { point: this.point}}">結果を見る</router-link>
         </div>
       </countdown>
     </div>
