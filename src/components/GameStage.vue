@@ -2,7 +2,7 @@
   <div id="inner-game">
     <h1>GameView</h1>
     <router-link to="/">Go to Home</router-link>	
-    <router-link to="/result/50">Go to Result</router-link> <br/>
+    <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
     <h2>{{ point }}</h2>
     <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
     <timer :point="this.point"/>
