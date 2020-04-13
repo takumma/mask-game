@@ -1,7 +1,7 @@
 <template>
   <div id="human" :style="styles" @click="checkMask">
     human
-    <div v-if="mask">⊂ロ⊃</div>
+    <div v-if="mask" class="mask">⊂ロ⊃</div>
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
 	computed: {
     styles() {
       return {
-        '--top': Math.floor(Math.random() * 61) + 25 + '%',
-        '--left': Math.floor(Math.random() * 80) + 10 + '%'
+        '--top': Math.floor(Math.random() * 61) + 20 +'%',
+        '--left': Math.floor(Math.random() * 80) + '%'
       }
     }
   },
@@ -36,12 +36,16 @@ export default {
 #human {
   --top: 0px;
   --left: 0px;
+  width: 60px;
+  height: 60px;
 
   position: absolute;
   top: var(--top);
   left: var(--left);
 
-	background-color: red;
-	padding: 20px;
+	background-image: url("../assets/logo.png");
+  background-size: contain;
 }
+
+
 </style>
