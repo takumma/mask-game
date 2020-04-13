@@ -1,6 +1,6 @@
 <template>
   <div id="inner-result">
-    <p id="result-title"><span id="result-num">{{num}}</span>人に<br>マスクをつけることができました！</p>
+    <p id="result-title"><span id="result-num">{{$route.params.point}}</span>人に<br>マスクをつけることができました！</p>
     <button class="result-button" @click="toHome">HOME</button>
     <button class="result-button" @click="RetryGame">Retry</button>
     <br>
