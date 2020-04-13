@@ -1,6 +1,6 @@
 <template>
   <div id="inner-result">
-    <p id="result-title"><span id="result-num">{{$route.params.point}}</span>人に<br>マスクをつけることができました！</p>
+    <p id="result-title"><span id="result-num">{{$store.state.result.point}}</span>人に<br>マスクをつけることができました！</p>
     <button class="result-button" @click="toHome">HOME</button>
     <button class="result-button" @click="RetryGame">Retry</button>
     <br>
@@ -25,7 +25,7 @@ export default {
       this.$router.push('/game')
     },
     tweet(){
-      const text = 'Maskgameで'+this.$route.params.point+'人にマスクをつけました'
+      const text = 'Maskgameで'+this.$store.state.result.point+'人にマスクをつけました'
       //urlはローンチするときに変更。あとハッシュタグもアプリ名に変更する
       const url = 'https://shoma-profile.netlify.com'
       const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=maskgame'

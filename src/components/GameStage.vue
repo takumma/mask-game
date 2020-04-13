@@ -2,10 +2,10 @@
   <div id="inner-game">
     <h1>GameView</h1>
     <router-link to="/">Go to Home</router-link>	
-    <router-link to="/result/50">Go to Result</router-link> <br/>
+    <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
     <p id="point">{{ point }}</p>
     <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
-    <timer id="timer" :point="this.point"/>
+    <timer id="timer" :point="this.point" @finish="finish"/>
   </div>
 </template>
 
@@ -25,6 +25,10 @@ export default {
   methods: {
     addPoint() {
       this.point += 1
+    },
+    finish(point) {
+      this.$store.commit('setPoint', {point})
+      this.$router.push('/result')
     }
   }
 }
