@@ -1,10 +1,10 @@
 <template>
     <div>
-      <countdown :left-time="60000" :auto-start="true" ref="cnt">
+      <countdown :left-time="60000" :auto-start="true" ref="cnt" v-on="autoGoResult()">
         <div slot="process" slot-scope="anyYouWantedScopName" class="time">{{ ` ${anyYouWantedScopName.timeObj.ceil.s}` }}</div>
         <div slot="finish" class="time">
           <span>０</span>
-          <button @click="finish">結果を見る</button>
+          <button v-on="finish" class="btn">結果を見る</button>
         </div>
       </countdown>
     </div>
@@ -18,6 +18,9 @@ export default {
   methods: {
     finish() {
       this.$emit('finish',this.point)
+    },
+    autoGoResult(){
+      setTimeout(this.finish,61000)
     }
   }  
 }
@@ -35,5 +38,9 @@ export default {
   border-radius: 50%;
   color: orangered;
   background-color: palegoldenrod;
+}
+
+.btn{
+  display: inline;
 }
 </style>
