@@ -1,11 +1,16 @@
 <template>
   <div id="inner-game">
-    <h1>GameView</h1>
-    <router-link to="/">Go to Home</router-link>	
-    <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
-    <p id="point">{{ point }}</p>
-    <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
-    <timer id="timer" :point="this.point" @finish="finish"/>
+    <div id="lock">
+      <h1>Lock中だよ</h1>
+    </div>
+    <div id="gaming">
+      <h1>GameView</h1>
+      <router-link to="/">Go to Home</router-link>	
+      <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
+      <p id="point">{{ point }}</p>
+      <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
+      <timer id="timer" :point="this.point" @finish="finish"/>
+    </div>
   </div>
 </template>
 
@@ -65,5 +70,15 @@ export default {
   color: orangered;
   margin: 0;
   background-color: palegoldenrod;
+}
+
+#lock{
+  display: none;
+  background-color: burlywood;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
 }
 </style>
