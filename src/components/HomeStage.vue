@@ -1,6 +1,11 @@
 <template>
   <div id="inner-home">
     <h1 id="home-title">MaskGame</h1>
+    <h2>ルール</h2>
+    <p>マスクがついてない子をタップしてね<br>マスクがついている子をタップすると画面をさわれなくなるから注意してね</p>
+    <br>
+    <h2>広告について</h2>
+    <p>広告で得たお金はサーバー管理費を除いた分は○○を通じてコロナウイルス対策への募金といたします。</p>
     <button class="home-button" @click="StartGame">Play</button>
   </div>
 </template>
