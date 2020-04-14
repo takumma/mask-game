@@ -11,8 +11,8 @@ export default {
   name: 'human',
   data() {
     return {
-      mask: Math.random() > 0.5 ? true:false,
-      sex: Math.random() > 0.5 ? true:false,
+      mask: Math.random() > 0.5,
+      sex: Math.random() > 0.5
     }
   },
 	computed: {
