@@ -8,7 +8,7 @@
       <router-link to="/">Go to Home</router-link>	
       <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
       <p id="point">{{ point }}</p>
-      <human v-for="people in peoples" v-bind:key="people" v-on:addPoint="addPoint"/>
+      <human v-for="people in peoples" v-bind:key="people" :humanId="people" v-on:addPoint="addPoint" @deleteHuman="deleteHuman"/>
       <timer id="timer" :point="this.point" @finish="finish"/>
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
   components: {human,timer},
   data() {
     return {
-      peoples: 10,
+      peoples: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       point: 0
     }
   },
@@ -34,6 +34,11 @@ export default {
     finish(point) {
       this.$store.commit('setPoint', {point})
       this.$router.push('/result')
+    },
+    deleteHuman(data) {
+      const index = this.$data.peoples.indexOf(data)
+      if (index === -1) { return }
+      this.$data.peoples.splice(index, 1)
     }
   }
 }
