@@ -1,6 +1,7 @@
 <template>
   <div id="human" :style="styles" @click="checkMask">
     human
+    <img :src="decideImage" class="img">
     <div v-if="mask" class="mask">⊂ロ⊃</div>
   </div>
 </template>
@@ -10,14 +11,22 @@ export default {
   name: 'human',
   data() {
     return {
-      mask: Math.random() > 0.5
+      mask: Math.random() > 0.5 ? true:false,
+      sex: Math.random() > 0.5 ? true:false,
     }
   },
 	computed: {
     styles() {
       return {
         '--top': Math.floor(Math.random() * 61) + 20 +'%',
-        '--left': Math.floor(Math.random() * 80) + '%',
+        '--left': Math.floor(Math.random() * 80) + '%'
+      }
+    },
+    decideImage() {
+      if(this.mask) {
+        return this.sex ? '/mask-man.jpg' : '/mask-woman.jpg'
+      }else {
+        return this.sex ? '/man.jpg' : '/woman.jpg'
       }
     }
   },
@@ -43,7 +52,7 @@ export default {
       }else{
         this.screenLock()
       }
-    }
+    },
   }
 }
 </script>
@@ -64,5 +73,8 @@ export default {
   background-size: contain;
 }
 
-
+.img {
+  width: 60px;
+  height: 60px;
+}
 </style>
