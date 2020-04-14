@@ -9,6 +9,9 @@
 <script>
 export default {
   name: 'human',
+  props: {
+    humanId: {}
+  },
   data() {
     return {
       mask: Math.random() > 0.5,
@@ -49,10 +52,14 @@ export default {
       if(!this.mask) {
         this.mask = true
         this.$emit('addPoint')
+        setTimeout(this.delete,3000);
       }else{
         this.screenLock()
       }
     },
+    delete() {
+      this.$emit('deleteHuman', this.humanId)
+    }
   }
 }
 </script>
