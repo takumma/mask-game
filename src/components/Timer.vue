@@ -1,10 +1,9 @@
 <template>
     <div>
-      <countdown :left-time="60000" :auto-start="true" ref="cnt" v-on="autoGoResult()">
+      <countdown :left-time="60000" :auto-start="true" ref="cnt" :v-once="autoGoResult()">
         <div slot="process" slot-scope="anyYouWantedScopName" class="time">{{ ` ${anyYouWantedScopName.timeObj.ceil.s}` }}</div>
         <div slot="finish" class="time">
           <span>０</span>
-          <button v-on="finish" class="btn">結果を見る</button>
         </div>
       </countdown>
     </div>
