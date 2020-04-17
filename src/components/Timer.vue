@@ -32,10 +32,10 @@ export default {
   height: 20px;
   width: 20px;
   padding: 20px;
-  border: orangered 2px solid;
+  border: #3cb371 2px solid;
   font-weight: 800;
   border-radius: 50%;
-  color: orangered;
+  color: #3cb371;
   background-color: palegoldenrod;
 }
 

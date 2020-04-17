@@ -4,7 +4,6 @@
       <h1>Lock中だよ</h1>
     </div>
     <div id="gaming">
-      <h1>GameView</h1>
       <router-link to="/">Go to Home</router-link>	
       <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
       <p id="point">{{ point }}</p>
@@ -54,7 +53,12 @@ export default {
   height: 92%;
   background-color: whitesmoke;
   border-radius: 30px;
+  /*background-image: url(../../public/road.png);*/
+  background-image: url(../assets/logo.png);
+  background-repeat: repeat;
 }
+
+
 
 #timer{
   position: absolute;
