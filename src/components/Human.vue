@@ -1,14 +1,21 @@
 <template>
-  <div id="human" :style="styles" @click="checkMask">
+  <e-cont>
+    <div id="human" :style="styles" @click="checkMask">
     human
     <img :src="decideImage" class="img">
     <div v-if="mask" class="mask">⊂ロ⊃</div>
   </div>
+  </e-cont>
+  
 </template>
 
 <script>
+import ECont from '../components/ECont.vue'
 export default {
   name: 'human',
+  components: {
+    ECont
+  },
   props: {
     humanId: {}
   },
