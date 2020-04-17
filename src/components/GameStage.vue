@@ -8,7 +8,10 @@
       <router-link to="/">Go to Home</router-link>	
       <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
       <p id="point">{{ point }}</p>
-      <human v-for="people in peoples" v-bind:key="people" :humanId="people" v-on:addPoint="addPoint" @deleteHuman="deleteHuman"/>
+      <human v-for="people in peoples" v-bind:key="people"
+        :humanId="people"
+        v-on:addPoint="addPoint" @deleteHuman="deleteHuman"
+      >
       <timer id="timer" :point="this.point" @finish="finish"/>
     </div>
   </div>
