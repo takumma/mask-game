@@ -50,10 +50,15 @@ export default {
     },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
-      const human = { id, pos: { x: 0, y: Math.floor( Math.random() * 100 )} }
+      const decideSide = Math.random() > 0.5 ? 0 : 100
+      const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 100 )} }
       this.$data.peoples.push(human)
       human.tw = new Tween(human.pos)
-      await human.tw.to({ x: 100}, 5000)
+      if( decideSide === 0 ){
+        await human.tw.to({ x: 100}, 5000)
+      } else {
+        await human.tw.to({x: 0}, 5000)
+      }
       this.deleteHuman(human)
     }
   }
