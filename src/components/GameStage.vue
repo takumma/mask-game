@@ -9,8 +9,8 @@
       <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
       <button @click="appearHuman">追加</button>
       <p id="point">{{ point }}</p>
-      <human v-for="people in peoples" v-bind:key="people"
-        :humanId="people"
+      <human v-for="people in peoples" v-bind:key="people.id"
+        :humanId="people" :top="people.pos.y" :left="people.pos.x"
         v-on:addPoint="addPoint" @deleteHuman="deleteHuman"
       />
       <timer id="timer" :point="this.point" @finish="finish"/>
@@ -21,14 +21,14 @@
 <script>
 import human from './Human'
 import timer from './Timer'
-// import Tween from '@/Tween.js'
+import Tween from '@/Tween.js'
 import 'normalize.css'
 export default {
   name: 'GameStage',
   components: {human,timer},
   data() {
     return {
-      peoples: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      peoples: [/*0, 1, 2, 3, 4, 5, 6, 7, 8, 9*/],
       point: 0
     }
   },
@@ -45,10 +45,16 @@ export default {
       if (index === -1) { return }
       this.$data.peoples.splice(index, 1)
     },
+    random() {
+      return Math.floor( Math.random() * 100 )
+    },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
-      const human = { id }//, pos: { x: 100, y: this.mainHeight - 20, s: 0.2 } }
+      const human = { id, pos: { x: 0, y: Math.floor( Math.random() * 100 )} }
       this.$data.peoples.push(human)
+      human.tw = new Tween(human.pos)
+      await human.tw.to({ x: 100}, 5000)
+      this.deleteHuman(human)
     }
   }
 }
