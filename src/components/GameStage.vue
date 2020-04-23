@@ -11,7 +11,7 @@
       <human v-for="people in peoples" v-bind:key="people"
         :humanId="people"
         v-on:addPoint="addPoint" @deleteHuman="deleteHuman"
-      >
+      />
       <timer id="timer" :point="this.point" @finish="finish"/>
     </div>
   </div>
