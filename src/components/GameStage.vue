@@ -7,6 +7,7 @@
       <h1>GameView</h1>
       <router-link to="/">Go to Home</router-link>	
       <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
+      <button @click="appearHuman">追加</button>
       <p id="point">{{ point }}</p>
       <human v-for="people in peoples" v-bind:key="people"
         :humanId="people"
@@ -19,7 +20,8 @@
 
 <script>
 import human from './Human'
-import timer from'./Timer'
+import timer from './Timer'
+// import Tween from '@/Tween.js'
 import 'normalize.css'
 export default {
   name: 'GameStage',
@@ -42,6 +44,11 @@ export default {
       const index = this.$data.peoples.indexOf(data)
       if (index === -1) { return }
       this.$data.peoples.splice(index, 1)
+    },
+    async appearHuman() {
+      const id = Math.floor( Math.random() * 100000 )
+      const human = { id }//, pos: { x: 100, y: this.mainHeight - 20, s: 0.2 } }
+      this.$data.peoples.push(human)
     }
   }
 }
