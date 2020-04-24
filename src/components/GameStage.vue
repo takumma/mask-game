@@ -61,7 +61,7 @@ export default {
     },
     tickGame() {
       const pplNum = this.peoples.length
-      if(pplNum < this.point) {
+      if(pplNum < this.point + 5) {
         if (Math.random() > 0.5) {
           this.appearHuman()
         }
@@ -70,7 +70,7 @@ export default {
     }
   },
   mounted() {
-    this.gameTickTimer = window.setInterval(this.tickGame, 1000)
+    this.gameTickTimer = window.setInterval(this.tickGame, 500)
   }
 }
 </script>
