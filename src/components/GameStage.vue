@@ -28,7 +28,7 @@ export default {
   components: {human,timer},
   data() {
     return {
-      peoples: [/*0, 1, 2, 3, 4, 5, 6, 7, 8, 9*/],
+      peoples: [],
       point: 0
     }
   },
@@ -44,9 +44,6 @@ export default {
       const index = this.$data.peoples.indexOf(data)
       if (index === -1) { return }
       this.$data.peoples.splice(index, 1)
-    },
-    random() {
-      return Math.floor( Math.random() * 100 )
     },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
