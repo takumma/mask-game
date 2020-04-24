@@ -28,6 +28,7 @@ export default {
   components: {human,timer},
   data() {
     return {
+      gameTickTimer: 0,
       peoples: [],
       point: 0
     }
@@ -57,7 +58,19 @@ export default {
         await human.tw.to({x: 0}, 5000)
       }
       this.deleteHuman(human)
+    },
+    tickGame() {
+      const pplNum = this.peoples.length
+      if(pplNum < this.point) {
+        if (Math.random() > 0.5) {
+          this.appearHuman()
+        }
+      }
+      
     }
+  },
+  mounted() {
+    this.gameTickTimer = window.setInterval(this.tickGame, 1000)
   }
 }
 </script>
