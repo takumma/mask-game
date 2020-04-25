@@ -10,7 +10,9 @@
 export default {
   name: 'human',
   props: {
-    humanId: {}
+    humanId: {},
+    top: {},
+    left: {}
   },
   data() {
     return {
@@ -21,8 +23,10 @@ export default {
 	computed: {
     styles() {
       return {
-        '--top': Math.floor(Math.random() * 61) + 20 +'%',
-        '--left': Math.floor(Math.random() * 80) + '%'
+        // '--top': Math.floor(Math.random() * 61) + 20 +'%',
+        // '--left': Math.floor(Math.random() * 80) + '%'
+        '--top': this.top + '%',
+        '--left': this.left + '%'
       }
     },
     decideImage() {
