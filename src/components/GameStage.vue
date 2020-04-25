@@ -27,7 +27,8 @@ export default {
   components: {human,timer},
   data() {
     return {
-      peoples: [/*0, 1, 2, 3, 4, 5, 6, 7, 8, 9*/],
+      gameTickTimer: 0,
+      peoples: [],
       point: 0
     }
   },
@@ -44,9 +45,6 @@ export default {
       if (index === -1) { return }
       this.$data.peoples.splice(index, 1)
     },
-    random() {
-      return Math.floor( Math.random() * 100 )
-    },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
       const decideSide = Math.random() > 0.5 ? 0 : 100
@@ -59,7 +57,19 @@ export default {
         await human.tw.to({x: 0}, 5000)
       }
       this.deleteHuman(human)
+    },
+    tickGame() {
+      const pplNum = this.peoples.length
+      if(pplNum < this.point + 5) {
+        if (Math.random() > 0.5) {
+          this.appearHuman()
+        }
+      }
+      
     }
+  },
+  mounted() {
+    this.gameTickTimer = window.setInterval(this.tickGame, 500)
   }
 }
 </script>
