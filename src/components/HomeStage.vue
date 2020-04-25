@@ -1,6 +1,6 @@
 <template>
   <div id="inner-home">
-    <h1 id="home-title">マスクをつけて！</h1>
+    <h1 id="home-title">ますくをつけて</h1>
     <h2>ルール</h2>
     <p>マスクがついてない子をタップしてね<br>マスクがついている子をタップすると画面をさわれなくなるから注意してね</p>
     <br>

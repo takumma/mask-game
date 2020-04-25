@@ -1,8 +1,9 @@
 <template>
     <div>
-      <countdown :left-time="60000" :auto-start="true" ref="cnt" v-on="autoGoResult()">
+      <countdown :left-time="60000" :auto-start="true" ref="cnt" :v-once="autoGoResult()">
         <div slot="process" slot-scope="anyYouWantedScopName" class="time">{{ ` ${anyYouWantedScopName.timeObj.ceil.s}` }}</div>
         <div slot="finish" class="time">
+          <span>０</span>
         </div>
       </countdown>
     </div>
@@ -31,10 +32,10 @@ export default {
   height: 20px;
   width: 20px;
   padding: 20px;
-  border: orangered 2px solid;
+  border: #3cb371 2px solid;
   font-weight: 800;
   border-radius: 50%;
-  color: orangered;
+  color: #3cb371;
   background-color: palegoldenrod;
 }
 
