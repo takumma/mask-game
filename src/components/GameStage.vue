@@ -76,6 +76,7 @@ export default {
 
 <style scoped>
 #inner-game{
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
