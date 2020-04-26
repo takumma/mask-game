@@ -1,7 +1,7 @@
 <template>
   <div id="inner-game">
     <div id="lock">
-      <h1>Lock中だよ</h1>
+        <h1 id="inner-lock">Lock中だよ</h1>
     </div>
     <div id="gaming">
       <router-link to="/">Go to Home</router-link>	
@@ -96,6 +96,7 @@ export default {
   position: absolute;
   top: 2%;
   left: 2%;
+  z-index: 2;
 }
 
 #point{
@@ -111,15 +112,25 @@ export default {
   color: orangered;
   margin: 0;
   background-color: palegoldenrod;
+  z-index: 2;
 }
 
 #lock{
   display: none;
-  background-color: burlywood;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(45,45,45,0.5);
+  border-radius: 30px;
+  z-index: 1;
+}
+
+#inner-lock{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  z-index: 100;
+  color: white;
+  width: 100%;
 }
 </style>
