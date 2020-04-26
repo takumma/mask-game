@@ -48,7 +48,7 @@ export default {
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
       const decideSide = Math.random() > 0.5 ? -20 : 100
-      const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 100 )} }
+      const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 87 ) + 2 } }
       this.$data.peoples.push(human)
       human.tw = new Tween(human.pos)
       if( decideSide === -20 ){
