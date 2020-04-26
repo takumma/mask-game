@@ -29,7 +29,7 @@ export default {
     return {
       gameTickTimer: 0,
       peoples: [],
-      point: 0
+      point: 0,
     }
   },
   methods: {
@@ -47,14 +47,14 @@ export default {
     },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
-      const decideSide = Math.random() > 0.5 ? 0 : 100
+      const decideSide = Math.random() > 0.5 ? -20 : 100
       const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 100 )} }
       this.$data.peoples.push(human)
       human.tw = new Tween(human.pos)
-      if( decideSide === 0 ){
+      if( decideSide === -20 ){
         await human.tw.to({ x: 100}, 5000)
       } else {
-        await human.tw.to({x: 0}, 5000)
+        await human.tw.to({x: -20}, 5000)
       }
       this.deleteHuman(human)
     },
@@ -88,6 +88,7 @@ export default {
   /*background-image: url(../../public/road.png);*/
   background-image: url(../assets/logo.png);
   background-repeat: repeat;
+  overflow: hidden;
 }
 
 
