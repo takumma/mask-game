@@ -27,9 +27,9 @@ export default {
     },
     decideImage() {
       if(this.mask) {
-        return this.sex ? '/mask-man.jpg' : '/mask-woman.jpg'
+        return this.sex ? '/mask-man.svg' : '/mask-woman.svg'
       }else {
-        return this.sex ? '/man.jpg' : '/woman.jpg'
+        return this.sex ? '/man.svg' : '/woman.svg'
       }
     }
   },
