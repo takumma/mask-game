@@ -1,8 +1,8 @@
 <template>
   <div id="inner-result">
     <p id="result-title"><span id="result-num">{{$store.state.result.point}}</span>人に<br>マスクをつけることができました！</p>
-    <button class="result-button" @click="toHome">HOME</button>
-    <button class="result-button" @click="RetryGame">Retry</button>
+    <button class="result-button" @click="toHome">さいしょにもどる</button>
+    <button class="result-button" @click="RetryGame">もういちど</button>
     <br>
     <button class="result-button" @click="tweet()">つぶやく</button>
   </div>
@@ -25,10 +25,10 @@ export default {
       this.$router.push('/game')
     },
     tweet(){
-      const text = '「ますくをつけて！」で'+this.$store.state.result.point+'人にマスクをつけました'
-      //urlはローンチするときに変更。あとハッシュタグもアプリ名に変更する
+      const text = '「ますくをつけて」で'+this.$store.state.result.point+'人にマスクをつけました'
+      //urlはローンチするときに変更
       const url = 'https://shoma-profile.netlify.com'
-      const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=ますくをつけて！'
+      const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=ますくをつけて'
       window.open(tweeturl,'sampletweet')
     }
   }
@@ -54,6 +54,7 @@ export default {
 #result-num{
   font-size: 50px;
   font-weight: 700;
+  color: #3cb371;
 }
 
 .result-button{

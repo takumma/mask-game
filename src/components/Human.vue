@@ -38,15 +38,11 @@ export default {
   methods: {
     delete_dom_obj(){
       var clear = document.getElementById('lock');
-      var x = document.getElementById('gaming');
       clear.style.display = 'none';
-      x.style.display = 'contents';
     },
     screenLock(){
       var lockelement = document.getElementById('lock');
-      var locked = document.getElementById('gaming');
-      lockelement.style.display = 'contents';
-      locked.style.display = 'none';
+      lockelement.style.display = 'block';
 
       setTimeout(this.delete_dom_obj,3000);
     },
