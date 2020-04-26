@@ -25,10 +25,10 @@ export default {
       this.$router.push('/game')
     },
     tweet(){
-      const text = '「マスクをつけて！」で'+this.$store.state.result.point+'人にマスクをつけました'
+      const text = '「ますくをつけて！」で'+this.$store.state.result.point+'人にマスクをつけました'
       //urlはローンチするときに変更。あとハッシュタグもアプリ名に変更する
       const url = 'https://shoma-profile.netlify.com'
-      const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=マスクをつけて！'
+      const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=ますくをつけて！'
       window.open(tweeturl,'sampletweet')
     }
   }
