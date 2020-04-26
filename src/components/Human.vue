@@ -1,8 +1,6 @@
 <template>
   <div id="human" :style="styles" @click="checkMask">
-    human
     <img :src="decideImage" class="img">
-    <div v-if="mask" class="mask">⊂ロ⊃</div>
   </div>
 </template>
 
@@ -72,9 +70,7 @@ export default {
   position: absolute;
   top: var(--top);
   left: var(--left);
-  --image:url("../assets/logo.png");
 
-	background-image: var(--image);
   background-size: contain;
 }
 
