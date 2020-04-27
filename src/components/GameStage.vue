@@ -4,9 +4,6 @@
         <h1 id="inner-lock">Lock中だよ</h1>
     </div>
     <div id="gaming">
-      <router-link to="/">Go to Home</router-link>	
-      <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
-      <button @click="appearHuman">追加</button>
       <p id="point">{{ point }}</p>
       <human v-for="people in peoples" v-bind:key="people.id"
         :humanId="people" :top="people.pos.y" :left="people.pos.x"
@@ -29,7 +26,8 @@ export default {
     return {
       gameTickTimer: 0,
       peoples: [],
-      point: 0
+      point: 0,
+      time: 0,
     }
   },
   methods: {
@@ -47,29 +45,25 @@ export default {
     },
     async appearHuman() {
       const id = Math.floor( Math.random() * 100000 )
-      const decideSide = Math.random() > 0.5 ? 0 : 100
-      const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 100 )} }
+      const decideSide = Math.random() > 0.5 ? -20 : 100
+      const human = { id, pos: { x: decideSide, y: Math.floor( Math.random() * 87 ) + 2 } }
       this.$data.peoples.push(human)
       human.tw = new Tween(human.pos)
-      if( decideSide === 0 ){
+      if( decideSide === -20 ){
         await human.tw.to({ x: 100}, 5000)
       } else {
-        await human.tw.to({x: 0}, 5000)
+        await human.tw.to({x: -20}, 5000)
       }
       this.deleteHuman(human)
     },
     tickGame() {
-      const pplNum = this.peoples.length
-      if(pplNum < this.point + 5) {
-        if (Math.random() > 0.5) {
+      if (Math.random() > 0.5) {
           this.appearHuman()
-        }
       }
-      
     }
   },
   mounted() {
-    this.gameTickTimer = window.setInterval(this.tickGame, 500)
+    this.gameTickTimer = window.setInterval(this.tickGame, 400)
   }
 }
 </script>
@@ -88,6 +82,7 @@ export default {
   /*background-image: url(../../public/road.png);*/
   background-image: url(../assets/logo.png);
   background-repeat: repeat;
+  overflow: hidden;
 }
 
 
