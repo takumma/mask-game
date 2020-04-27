@@ -4,9 +4,6 @@
         <h1 id="inner-lock">Lock中だよ</h1>
     </div>
     <div id="gaming">
-      <router-link to="/">Go to Home</router-link>	
-      <router-link :to="{name: 'result', params: { point: this.point}}">Go to Result</router-link> <br/>
-      <button @click="appearHuman">追加</button>
       <p id="point">{{ point }}</p>
       <human v-for="people in peoples" v-bind:key="people.id"
         :humanId="people" :top="people.pos.y" :left="people.pos.x"
@@ -30,6 +27,7 @@ export default {
       gameTickTimer: 0,
       peoples: [],
       point: 0,
+      time: 0,
     }
   },
   methods: {
@@ -59,17 +57,13 @@ export default {
       this.deleteHuman(human)
     },
     tickGame() {
-      const pplNum = this.peoples.length
-      if(pplNum < this.point + 5) {
-        if (Math.random() > 0.5) {
+      if (Math.random() > 0.5) {
           this.appearHuman()
-        }
       }
-      
     }
   },
   mounted() {
-    this.gameTickTimer = window.setInterval(this.tickGame, 500)
+    this.gameTickTimer = window.setInterval(this.tickGame, 400)
   }
 }
 </script>
