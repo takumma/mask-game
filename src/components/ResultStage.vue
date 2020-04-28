@@ -26,8 +26,7 @@ export default {
     },
     tweet(){
       const text = '「ますくをつけて」で'+this.$store.state.result.point+'人にマスクをつけました'
-      //urlはローンチするときに変更
-      const url = 'https://shoma-profile.netlify.com'
+      const url = 'https://mask-game.tk/'
       const tweeturl = 'https://twitter.com/share?text='+text+'&url='+url+'&hashtags=ますくをつけて'
       window.open(tweeturl,'sampletweet')
     }
