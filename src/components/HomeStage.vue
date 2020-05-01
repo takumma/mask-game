@@ -5,10 +5,6 @@
       <h4 class="content-title">ルール</h4>
       <p class="content-text">マスクがついてない子をタップしてマスクをつけるゲームです。マスクがついている子をタップすると少しの間マスクをつけることができなくなってしまうから注意してね</p>
     </div>
-    <div class="home-content">
-      <h4 class="content-title">広告について</h4>
-      <p class="content-text">広告で得たお金はサーバー管理費を除いた分は○○を通じてコロナウイルス対策への募金といたします。</p>
-    </div>
     <p class="report content-text">バグやご意見は<a href="https://twitter.com/tak_kum_ma">開発者</a>まで</p>
     <button class="home-button" @click="StartGame">あそぶ</button>
   </div>

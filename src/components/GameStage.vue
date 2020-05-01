@@ -77,10 +77,8 @@ export default {
   transform: translateX(-50%) translateY(-50%);
   width: 85%;
   height: 92%;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 30px;
-  /*background-image: url(../../public/road.png);*/
-  background-image: url(../assets/logo.png);
   background-repeat: repeat;
   overflow: hidden;
 }
